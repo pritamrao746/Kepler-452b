@@ -1,0 +1,15 @@
+.grid-container{
+    display: grid;
+    min-height: 100vh;
+    column-gap: 45px;
+    grid-template-columns: 5fr 15fr; 
+    grid-template-rows: auto;
+}
+
+.filter-wrap{
+    border: 10px solid red;
+}
+
+.charts-wrap{
+    border: 10px solid blue;
+}

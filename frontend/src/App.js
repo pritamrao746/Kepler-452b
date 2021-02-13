@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { server } from "./config/config";
+import Dashboard from './components/Dashboard/Dashboard';
 import axios from 'axios';
 import './App.css';
 
@@ -29,9 +30,10 @@ function App() {
 
   return (
     <div className="App">
-      <input type = "text" value={text} onChange = {handleText} />
+      <Dashboard />
+      {/* <input type = "text" value={text} onChange = {handleText} />
       <button onClick = {handleReq}> Submit </button>
-      <p> { word } </p>
+      <p> { word } </p> */}
     </div>
   );
 }
