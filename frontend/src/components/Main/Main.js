@@ -1,10 +1,54 @@
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import axios from 'axios';
 import "./Main.css";
 import hello from "../../assets/hello.svg";
 import Chart from "../../components/Chart/Chart";
+import GenderChart from '../../Charts/genderchart';
 import ISCVisualizer from "../ISCVisualizer/ISCVisualizer";
 import WCCVisualizer from "../WCCVisualizer/WCCVisualizer";
 
+const Page = styled.div`
+    // width: 100%;
+    display: grid;
+    min-height: 100vh;
+    column-gap: 45px;
+    grid-template-columns: 5fr 15fr; 
+    // grid-template-rows: auto;
+    background-color: ${props => props.theme.pageBackground};
+    color: ${props => props.theme.textColor};
+`;
+
 const Main = () => {
+
+  const [rawData, setRawData] = useState([]);
+
+  const [fetched, setFetched] = useState(false);
+
+  useEffect(() => {
+    if (fetched === false) {
+      initData();
+    }
+  }, [fetched]);
+
+  const initData = async () => {
+    try {
+      const [
+        response,
+        rawDataResponse,
+        stateDailyResponse,
+      ] = await Promise.all([
+        axios.get('https://api.covid19india.org/data.json'),
+        axios.get('https://api.covid19india.org/raw_data.json'),
+        axios.get('https://api.covid19india.org/states_daily.json'),
+      ]);
+      setRawData(rawDataResponse.data.raw_data);
+      setFetched(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <main>
       <div className="main__container">

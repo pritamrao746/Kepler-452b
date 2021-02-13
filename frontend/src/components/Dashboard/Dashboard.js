@@ -54,35 +54,23 @@ function Dashboard({ theme, setTheme }) {
 
     return (
         <Page>
-             {/* <div class="grid-container"> */}
-                <div class="filter-wrap">
-                    <p> Filters </p>
-                </div>
-                <div class="charts-wrap">
-                    <div class="flex-container">
-                        <div class="mode-icon">
-                            <div class="search-wrap">
-                                <Dropdown 
-                                    options={data} 
-                                    id='id'
-                                    label='name'
-                                    prompt='Select animal ...' 
-                                    value={value}
-                                    onChange={val => setValue(val)}
-                                />
-                            </div>
-                            <Toggle onClick={changeTheme}>
-                                { icon }
-                            </Toggle>
-                        </div>
+            <div class="flex-container">
+                <div class="mode-icon">
+                    <div class="search-wrap">
+                        <Dropdown 
+                            options={data} 
+                            id='id'
+                            label='name'
+                            prompt='Select animal ...' 
+                            value={value}
+                            onChange={val => setValue(val)}
+                        />
                     </div>
-                    <div>
-                        <p> Charts </p>
-                        <ISCVisualizer />
-                        <WCCVisualizer />
-                    </div>
+                    <Toggle onClick={changeTheme}>
+                        { icon }
+                    </Toggle>
                 </div>
-            {/* </div> */}
+            </div>
         </Page>
     )
 }

@@ -8,7 +8,7 @@ import './App.scss';
 import Main from "./components/Main/Main";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
-
+import Home from './components/Home';
 
 const LightTheme = {
   pageBackground: "white",

@@ -4,6 +4,11 @@
   margin: 20px 0;
 } */
 
+canvas.chartjs-render-monitor{
+  height: 350px !important;
+}
+
+
 .App {
   text-align: center;
 }
