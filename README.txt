@@ -1,2 +1,2 @@
-## SPIT hackathon
+**SPIT hackathon**
 
