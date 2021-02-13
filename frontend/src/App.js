@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import axios from 'axios';
 import { ThemeProvider } from "styled-components";
 import './App.css';
+import './App.scss';
 
 const LightTheme = {
   pageBackground: "white",
