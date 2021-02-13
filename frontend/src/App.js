@@ -2,12 +2,33 @@ import React, { useState, useEffect } from 'react';
 import { server } from "./config/config";
 import Dashboard from './components/Dashboard/Dashboard';
 import axios from 'axios';
+import { ThemeProvider } from "styled-components";
 import './App.css';
+
+const LightTheme = {
+  pageBackground: "white",
+  titleColor: "#dc658b",
+  tagLineColor: "black",
+  textColor: "black",
+};
+
+const DarkTheme = {
+  pageBackground: "#282c36",
+  titleColor: "lightpink",
+  tagLineColor: "lavender",
+  textColor: "white",
+}
+
+const themes = {
+  light: LightTheme,
+  dark: DarkTheme,
+}
 
 function App() {
 
   const [word, setWord] = useState('not working ...');
-  const [text, setText] = useState('none');
+  const [text, setText] = useState("");
+  const [theme, setTheme] = useState("light");
 
   const handleText = (e) => {
     setText(e.target.value);
@@ -21,7 +42,7 @@ function App() {
       },
     });
     console.log(response);
-    setWord('working ...');
+    // setWord('working ...');
   }
 
   useEffect(() => {
@@ -29,12 +50,19 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Dashboard />
-      {/* <input type = "text" value={text} onChange = {handleText} />
-      <button onClick = {handleReq}> Submit </button>
-      <p> { word } </p> */}
-    </div>
+    // <ThemeProvider theme={themes[theme]}>
+    //   <Dashboard theme={theme} setTheme={setTheme} />
+    // </ThemeProvider>
+    <ThemeProvider theme={themes[theme]}>
+      <div className="App">
+        <div class = "test-wrap">
+          <input type = "text" value={text} onChange = {handleText} />
+          <button onClick = {handleReq}> Submit </button>
+          {/* <p> { word } </p> */}
+        </div>
+        <Dashboard theme={theme} setTheme={setTheme} />
+      </div>
+    </ThemeProvider>
   );
 }
 
