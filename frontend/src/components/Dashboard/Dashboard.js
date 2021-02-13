@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
 import ISCVisualizer from "../ISCVisualizer/ISCVisualizer";
 import WCCVisualizer from "../WCCVisualizer/WCCVisualizer";
+import Dropdown from "../Dropdown/Dropdown";
+import data from "../Dropdown/data/animals.json";
 import './Dashboard.css';
 
 const Page = styled.div`
@@ -48,6 +50,8 @@ function Dashboard({ theme, setTheme }) {
     const sunIcon = <CgSun size={40} />;
     const icon = (theme === "light") ? moonIcon : sunIcon;
 
+    const [value, setValue] = useState(null);
+
     return (
         <Page>
              {/* <div class="grid-container"> */}
@@ -57,6 +61,16 @@ function Dashboard({ theme, setTheme }) {
                 <div class="charts-wrap">
                     <div class="flex-container">
                         <div class="mode-icon">
+                            <div class="search-wrap">
+                                <Dropdown 
+                                    options={data} 
+                                    id='id'
+                                    label='name'
+                                    prompt='Select animal ...' 
+                                    value={value}
+                                    onChange={val => setValue(val)}
+                                />
+                            </div>
                             <Toggle onClick={changeTheme}>
                                 { icon }
                             </Toggle>
