@@ -5,6 +5,10 @@ import axios from 'axios';
 import { ThemeProvider } from "styled-components";
 import './App.css';
 import './App.scss';
+import Main from "./components/Main/Main";
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+
 
 const LightTheme = {
   pageBackground: "white",
@@ -50,15 +54,28 @@ function App() {
     // handleReq();
   }, []);
 
+  const [sidebarOpen, setsidebarOpen] = useState(false);
+  const openSidebar = () => {
+    setsidebarOpen(true);
+  };
+  const closeSidebar = () => {
+    setsidebarOpen(false);
+  };
+
   return (
     // <ThemeProvider theme={themes[theme]}>
     //   <Dashboard theme={theme} setTheme={setTheme} />
     // </ThemeProvider>
-    <ThemeProvider theme={themes[theme]}>
-      <div className="App">
-        <Dashboard theme={theme} setTheme={setTheme} />
-      </div>
-    </ThemeProvider>
+    // <ThemeProvider theme={themes[theme]}>
+    //   <div className="App">
+    //     <Dashboard theme={theme} setTheme={setTheme} />
+    //   </div>
+    // </ThemeProvider>
+    <div className="container1">
+    <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
+    <Main />
+    <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
+  </div>
   );
 }
 

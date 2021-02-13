@@ -53,20 +53,20 @@ function ISCVisualizer() {
       <div className="cards-container">
           <section className="cards">
             <div
-              className="card card-big fadeInUp"
+              className="card-big fadeInUp"
               style={{ animationDelay: "0.7s" }}
             >
               <GenderChart title="Patient Gender" data={rawData} />
               {/* <button onClick={dataCheck}>Check</button> */}
             </div>
             <div
-              className="card card-big fadeInUp"
+              className="card-big fadeInUp"
               style={{ animationDelay: "0.7s" }}
             >
               <AgeChart title="Patients by Age" data={rawData} />
             </div>
             <div
-              className="card card-big fadeInUp"
+              className="card-big fadeInUp"
               style={{ animationDelay: "0.7s" }}
             >
               <NationalityChart title="Patients by  Nationality" data={rawData} />
