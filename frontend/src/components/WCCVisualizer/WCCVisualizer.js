@@ -141,7 +141,7 @@ function WCCVisualizer() {
         <div className="cards-container">
           <section className="cards">
             <div
-              className="card card-big fadeInUp"
+              className="card-big fadeInUp"
               style={{ animationDelay: "0.7s" }}
             >
               <India
@@ -151,7 +151,7 @@ function WCCVisualizer() {
               />
             </div>
             <div
-              className="card card-big fadeInUp"
+              className="card-big fadeInUp"
               style={{ animationDelay: "0.7s" }}
             >
               <India
@@ -161,7 +161,7 @@ function WCCVisualizer() {
               />
             </div>
             <div
-              className="card card-big fadeInUp"
+              className="card-big fadeInUp"
               style={{ animationDelay: "0.7s" }}
             >
               <India
@@ -180,7 +180,7 @@ function WCCVisualizer() {
         <div className="cards-container">
           <section className="cards">
             <div
-              className="card card-big fadeInUp"
+              className="card-big fadeInUp"
               style={{ animationDelay: "0.7s" }}
             >
               <AllStatesChart
@@ -191,7 +191,7 @@ function WCCVisualizer() {
               {/* <button onClick={dataCheck}>Check</button> */}
             </div>
             <div
-              className="card card-big fadeInUp"
+              className="card-big fadeInUp"
               style={{ animationDelay: "0.7s" }}
             >
               <AllStatesChart
@@ -201,7 +201,7 @@ function WCCVisualizer() {
               />
             </div>
             <div
-              className="card card-big fadeInUp"
+              className="card-big fadeInUp"
               style={{ animationDelay: "0.7s" }}
             >
               <AllStatesChart
