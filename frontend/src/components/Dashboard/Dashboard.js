@@ -2,15 +2,17 @@ import React from 'react';
 import styled from "styled-components";
 import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
+import ISCVisualizer from "../ISCVisualizer/ISCVisualizer";
+import WCCVisualizer from "../WCCVisualizer/WCCVisualizer";
 import './Dashboard.css';
 
 const Page = styled.div`
-    width: 100%;
+    // width: 100%;
     display: grid;
     min-height: 100vh;
     column-gap: 45px;
     grid-template-columns: 5fr 15fr; 
-    grid-template-rows: auto;
+    // grid-template-rows: auto;
     background-color: ${props => props.theme.pageBackground};
     color: ${props => props.theme.textColor};
 `;
@@ -60,7 +62,11 @@ function Dashboard({ theme, setTheme }) {
                             </Toggle>
                         </div>
                     </div>
-                    <p> Charts </p>
+                    <div>
+                        <p> Charts </p>
+                        <ISCVisualizer />
+                        <WCCVisualizer />
+                    </div>
                 </div>
             {/* </div> */}
         </Page>

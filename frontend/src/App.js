@@ -56,11 +56,6 @@ function App() {
     // </ThemeProvider>
     <ThemeProvider theme={themes[theme]}>
       <div className="App">
-        <div class = "test-wrap">
-          <input type = "text" value={text} onChange = {handleText} />
-          <button onClick = {handleReq}> Submit </button>
-          {/* <p> { word } </p> */}
-        </div>
         <Dashboard theme={theme} setTheme={setTheme} />
       </div>
     </ThemeProvider>
