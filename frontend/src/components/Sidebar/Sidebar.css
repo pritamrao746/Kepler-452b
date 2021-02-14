@@ -40,15 +40,23 @@
 
 .sidebar__menu > h2 {
   color: #3ea175;
-  font-size: 16px;
+  font-size: 20px;
   margin-top: 15px;
   margin-bottom: 5px;
   padding: 0 10px;
   font-weight: 700;
 }
-.sidebar__menu > h3, form, h1 {
+.sidebar__menu > form, h1 {
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  padding: 0 10px;
+  font-weight: 700;
+}
+.sidebar__menu > h3 {
+  color: #fff;
+  font-size: 20px;
   margin-top: 15px;
   margin-bottom: 5px;
   padding: 0 10px;

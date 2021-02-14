@@ -74,8 +74,8 @@ function Header({ received, sold, available }) {
                         <span class="h2 font-weight-bold mb-0">{ received }</span>
                     </div>
                     <div class="icon-wrap">
-                        <div class="icon-wrap-container icon icon-shape bg-green text-white rounded-circle shadow">
-                            <i class="fa fa-skull-crossbones"></i>
+                        <div class="icon-wrap-container icon icon-shape bg-warning text-white rounded-circle shadow">
+                            <i class="fa fa-water"></i>
                         </div>
                     </div>
                 </div>
@@ -90,8 +90,8 @@ function Header({ received, sold, available }) {
                         <span class="h2 font-weight-bold mb-0">{ sold }</span>
                     </div>
                     <div class="icon-wrap">
-                        <div class="icon-wrap-container icon icon-shape bg-green text-white rounded-circle shadow">
-                            <i class="fa fa-skull-crossbones"></i>
+                        <div class="icon-wrap-container icon icon-shape bg-info text-white rounded-circle shadow">
+                            <i class="fa fa-water"></i>
                         </div>
                     </div>
                 </div>
@@ -106,8 +106,8 @@ function Header({ received, sold, available }) {
                         <span class="h2 font-weight-bold mb-0">{ available }</span>
                     </div>
                     <div class="icon-wrap">
-                        <div class="icon-wrap-container icon icon-shape bg-danger text-white rounded-circle shadow">
-                            <i class="fa fa-skull-crossbones"></i>
+                        <div class="icon-wrap-container icon icon-shape bg-success text-white rounded-circle shadow">
+                            <i class="fa fa-water"></i>
                         </div>
                     </div>
                 </div>
