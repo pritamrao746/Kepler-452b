@@ -9,6 +9,7 @@ import Main from "./components/Main/Main";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Home from './components/Home';
+import Table from './components/Table/Table';
 
 const LightTheme = {
   pageBackground: "white",
@@ -72,10 +73,10 @@ function App() {
     //   </div>
     // </ThemeProvider>
     <div className="container1">
-    <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
-    <Main />
-    <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
-  </div>
+      <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
+      <Main />
+      <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
+    </div>
   );
 }
 

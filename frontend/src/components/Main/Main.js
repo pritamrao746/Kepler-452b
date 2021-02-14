@@ -7,6 +7,7 @@ import Chart from "../../components/Chart/Chart";
 import GenderChart from '../../Charts/genderchart';
 import ISCVisualizer from "../ISCVisualizer/ISCVisualizer";
 import WCCVisualizer from "../WCCVisualizer/WCCVisualizer";
+import Header from '../Header/Header';
 
 const Page = styled.div`
     // width: 100%;
@@ -74,6 +75,7 @@ const Main = () => {
               <i className="fa fa-usd" aria-hidden="true"></i>
             </div>
             
+            <Header received={500} sold={430} available={70} />
             <ISCVisualizer />
             <WCCVisualizer />
           </div>

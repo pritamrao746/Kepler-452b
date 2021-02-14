@@ -40,3 +40,31 @@
     max-width: 100%;
   }
 
+
+  .header-grid-container{
+    margin-top: 20px;
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-body-grid-container{
+    display: grid;
+    /* column-gap: 40px; */
+    grid-template-columns: 5fr 1fr;
+  }
+
+
+  .icon-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon-wrap-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+  }
