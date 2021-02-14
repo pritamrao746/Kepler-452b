@@ -4,8 +4,13 @@ from rest_framework import serializers
 from rest_framework.decorators import api_view
 from rest_framework import status
 import pandas as pd 
-PATH="~/Desktop/College/SEM6/Hack/retailer_stock.csv"
-df=pd.read_csv(PATH)
+
+from datetime import date,timedelta
+import statsmodels.api as sm
+from .a import predict
+
+# PATH="~/Desktop/College/SEM6/Hack/retailer_stock.csv"
+# df=pd.read_csv(PATH)
 # Create your views here.
 # @api_view(['GET', 'POST'])
 # def detail(request):
@@ -25,19 +30,20 @@ def retailerlist(request):
 
 @api_view(['GET', 'POST'])
 def processReatiler(request):
+	return Response(predict(295565,'MOP',date(2021,1,2),date(2021,2,5),'secondary'))
 	if request.method=='GET':
-		print('TYES')
+		# print('TYES')
 		for key,val in request.GET.items():
 			print(key,val)
 		try :
 			start_time=request.GET['start_time']
 			end_time=request.GET['end_time']
 			retailer_id=request.GET['retailer_id']
-			print(start_time+' '+end_time+' '+retailer_id)		
-			return Response(status=status.HTTP_302_FOUND)
+			# print(start_time+' '+end_time+' '+retailer_id)		
+			# return Response(status=status.HTTP_302_FOUND)
+			# return Response(predict(295565,'MOP',date(2021,1,2),date(2021,2,5),'secondary'))
 		except:
 			return Response(status=status.HTTP_404_NOT_FOUND)
-
 
 
 
