@@ -22,6 +22,9 @@ from .a import predict
 
 # PATH="~/Desktop/College/SEM6/Hack/retailer_stock.csv"
 # df=pd.read_csv(PATH)
+
+df=pd.read_csv(r'\Users\Rajat\Desktop\spit_hack\Kepler-452b\PS5\api\rs_mop.csv')
+
 @api_view(['GET', 'POST'])
 def retailerlist(request):
 	if request.method=='GET':

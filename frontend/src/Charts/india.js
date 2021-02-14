@@ -16,30 +16,31 @@ function India(props) {
 
   let index;
 
-  console.log(props.data);
+  // console.log(props.data);
 
   props.data.forEach((d) => {
     let x, y;
     Object.keys(d).forEach((key) => {
       x = d.Date;
-      if(props.status == "Confirmed"){
-        y = d.Confirmed;
-        index = 0;
-      }
-      if(props.status == "Recovered"){
-        y = d.Recovered;
-        index = 1;
-      }
-      if(props.status == "Deaths"){
-        y = d.Deaths;
-        index = 2;
-      }
+      y = d.Demand;
+      // if(props.status == "Confirmed"){
+      //   y = d.Confirmed;
+      //   index = 0;
+      // }
+      // if(props.status == "Recovered"){
+      //   y = d.Recovered;
+      //   index = 1;
+      // }
+      // if(props.status == "Deaths"){
+      //   y = d.Deaths;
+      //   index = 2;
+      // }
     });
     x = x.substring(0, 10);
     const ndate = new Date(x).toISOString();
     dates.push(ndate);
     dat.push(y);
-    console.log(`${ndate} => ${y}`);
+    // console.log(`${ndate} => ${y}`);
   });
 
 

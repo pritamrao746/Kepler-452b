@@ -6,21 +6,25 @@ import statsmodels.api as sm
 def predict(retailer_id,product,start_date,end_date,sale_type):
     df = ratio_distribution = quantity = None
     if sale_type=="secondary":
-        df = pd.read_csv("/Users/pravinrajpurohit/Desktop/Kepler-452b/PS5/api/received_quantity_df.csv")
+        # C:\Users\Rajat\Desktop\spit_hack\Kepler-452b\PS5\api
+        df = pd.read_csv(r'\Users\Rajat\Desktop\spit_hack\Kepler-452b\PS5\api\received_quantity_df.csv')
         quantity = "received_quantity"
     else:
-        df = pd.read_csv("/Users/pravinrajpurohit/Desktop/Kepler-452b/PS5/api/sold_quantity_df.csv")
+        df = pd.read_csv(r"\Users\Rajat\Desktop\spit_hack\Kepler-452b\PS5\api\sold_quantity_df.csv")
         quantity = "sold_quantity"
         
     #print(df)
+
+    # r'\Users\Rajat\Desktop\spit_hack\Kepler-452b\PS5\api\rs_mop.csv'
+
     df["to_date"] = pd.to_datetime(df.to_date)
     df.index = df.to_date
     df.drop(columns=["to_date"],inplace=True)
     
     if product == "MOP":
-        ratio_distribution = pd.read_csv("/Users/pravinrajpurohit/Desktop/Kepler-452b/PS5/api/rs_mop.csv")
+        ratio_distribution = pd.read_csv(r"\Users\Rajat\Desktop\spit_hack\Kepler-452b\PS5\api\rs_mop.csv")
     else:
-        ratio_distribution = pd.read_csv("/Users/pravinrajpurohit/Desktop/Kepler-452b/PS5/api/rs_dap.csv")
+        ratio_distribution = pd.read_csv(r"\Users\Rajat\Desktop\spit_hack\Kepler-452b\PS5\api\rs_dap.csv")
 
     
     

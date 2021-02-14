@@ -3,6 +3,8 @@ import './Dropdown.css';
 
 function Dropdown({ options, id, label, prompt, value, onChange }) {
 
+    console.log(options);
+
     const [open, setOpen] = useState(false);
     const [query, setQuery] = useState("");
     const ref = useRef(null);
