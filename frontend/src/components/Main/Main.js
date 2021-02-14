@@ -7,7 +7,7 @@ import Chart from "../../components/Chart/Chart";
 import GenderChart from '../../Charts/genderchart';
 import ISCVisualizer from "../ISCVisualizer/ISCVisualizer";
 import WCCVisualizer from "../WCCVisualizer/WCCVisualizer";
-
+import Table from '../Table/Table'
 const Page = styled.div`
     // width: 100%;
     display: grid;
@@ -76,6 +76,7 @@ const Main = () => {
             
             <ISCVisualizer />
             <WCCVisualizer />
+            <Table/>
           </div>
 
           {/* <div className="charts__right">
