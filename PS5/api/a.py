@@ -12,7 +12,7 @@ def predict(retailer_id,product,start_date,end_date,sale_type):
     else:
         df = pd.read_csv(r"\Users\Rajat\Desktop\spit_hack\Kepler-452b\PS5\api\sold_quantity_df.csv")
         quantity = "sold_quantity"
-        
+
     #print(df)
 
     # r'\Users\Rajat\Desktop\spit_hack\Kepler-452b\PS5\api\rs_mop.csv'
@@ -47,22 +47,28 @@ def predict(retailer_id,product,start_date,end_date,sale_type):
     print(start_index,end_index)
     
     forecast = fit1.predict(start=start_index, end=end_index, dynamic=True) 
-    d=dict()
-    d['points']=[]
+    # d=dict()
+    # d['points']=[]
+    d=[]
     ind=0
     for i in forecast.values:
-        d['points'].append((str(date_list[ind].year)+'-'+
-            str(date_list[ind].month)+'-'+str(date_list[ind].day),i) )
+        d.append({'x':str(date_list[ind].year)+'-'+
+            str(date_list[ind].month)+'-'+str(date_list[ind].day),
+                'y':str(i) })
+        # d['points'].append((,i) )
         ind+=1
     
 
     # print(forecast.values.sum()/(end_index-start_index))
     ## Calclating Final stock holding till the period
+    print("\n\n\n\n\n\n")
+    print(retailer_id,ratio_distribution[ratio_distribution["retailer_id"] == retailer_id])
+    print("\n\n\n\n\n\n")
     stock_holding = (forecast * ratio_distribution[ratio_distribution["retailer_id"] == retailer_id]["rq_ratio"].values[0])
-    d['holding']=stock_holding.values.sum()
+    # d['holding']=stock_holding.values.sum()
     # print(stock_holding.values.sum())
-    if d['holding']==0:
-        d['holding']=forecast.values.sum()/(1000*(end_index-start_index))
+    # if d['holding']==0:
+        # d['holding']=forecast.values.sum()/(1000*(end_index-start_index))
     return d
 
 # predict(295565,'MOP',date(2021,1,1),date(2021,2,5),'secondary')

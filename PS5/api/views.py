@@ -46,22 +46,28 @@ def productlist(request):
 
 @api_view(['GET', 'POST'])
 def processReatiler(request):
-	return Response(predict(295565,'MOP',date(2021,1,2),date(2021,2,5),'secondary'))
+	# return Response(predict(295565,'MOP',date(2021,1,2),date(2021,2,5),'secondary'))
 	if request.method=='GET':
 		# print('TYES')
-		for key,val in request.GET.items():
-			print(key,val)
+		# for key,val in request.GET.items():
+			# print(key,val)
 		try :
-			start_time=request.GET['start_time']
-			end_time=request.GET['end_time']
+			st=request.GET['start_time']
+			st=list(map(int,st.split('/')))
+			start_time=date(st[0],st[1],st[2])
+			et=request.GET['end_time']
+			et=list(map(int,et.split('/')))
+			end_time=date(et[0],et[1],et[2])
+
 			retailer_id=request.GET['retailer_id']
-			prodcut_id=request.GET['prodcut_id']
+			prodcut_id=request.GET['product_id']
 			retailer_type=request.GET['type']
-			# res=predict(prodcut_id,prodcut_id,start_time,end_time,retailer_type)
-			# return Response(res)
-			# print(start_time+' '+end_time+' '+retailer_id)		
-			# return Response(status=status.HTTP_302_FOUND)
-			# return Response(predict(295565,'MOP',date(2021,1,2),date(2021,2,5),'secondary'))
+			print(retailer_id,prodcut_id,start_time,end_time,retailer_type)
+			return Response(predict(int(retailer_id),prodcut_id,start_time,end_time,retailer_type))
+		
+		# print(start_time+' '+end_time+' '+retailer_id)		
+		# return Response(status=status.HTTP_302_FOUND)
+		# return Response(predict(295565,'MOP',date(2021,1,2),date(2021,2,5),'secondary'))
 		except:
 			return Response(status=status.HTTP_404_NOT_FOUND)
 
