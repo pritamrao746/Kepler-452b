@@ -1,4 +1,5 @@
 import "./Navbar.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Navbar = ({ sidebarOpen, openSidebar }) => {
   return (
@@ -7,9 +8,13 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
         <i className="fa fa-bars" aria-hidden="true"></i>
       </div>
       <div className="navbar__left">
-        <a className="active_link" href="#">Sale Representative</a>
-        <a href="#">Retailer</a>
-        
+        <Link to="/" activeClassName="active_link" href="#">
+          Sale Representative
+        </Link>
+        {/* <a className="active_link" href="#">Sale Representative</a> */}
+        <Link to="/rmain" activeClassName="active_link" href="#">
+          Retailer
+        </Link>
       </div>
       {/* <div className="navbar__right">
         <a href="#">

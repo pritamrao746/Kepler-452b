@@ -56,7 +56,7 @@ function ISCVisualizer() {
               className="card-big fadeInUp"
               style={{ animationDelay: "0.7s" }}
             >
-              <GenderChart title="Patient Gender" data={rawData} />
+              <GenderChart title="Sale Comparison of Products" data={rawData} />
               {/* <button onClick={dataCheck}>Check</button> */}
             </div>
             <div

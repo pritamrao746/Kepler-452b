@@ -1,47 +1,40 @@
-import React from 'react';
-import './Table.css';
+import React from "react";
+import "./Table.css";
 
-function Table() {
-    return (
-        <div>
-            <table className="content-table">
-                <thead>
-                    <tr>
-                        <th> Rank </th>
-                        <th> Name </th>
-                        <th> Points </th>
-                        <th> Team </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Rajat</td>
-                        <td>100</td>
-                        <td>Kepler</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Neha</td>
-                        <td>100</td>
-                        <td>Kepler</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Pritam</td>
-                        <td>100</td>
-                        <td>Kepler</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Mahipal</td>
-                        <td>100</td>
-                        <td>Kepler</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    )
+export default function Table() {
+  return (
+    <div>
+        <h1>Top 5 Retailers</h1>
+      <table class="table table-striped table-light">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
 }
-
-export default Table;

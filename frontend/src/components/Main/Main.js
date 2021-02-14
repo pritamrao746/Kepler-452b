@@ -9,6 +9,7 @@ import ISCVisualizer from "../ISCVisualizer/ISCVisualizer";
 import WCCVisualizer from "../WCCVisualizer/WCCVisualizer";
 import Header from '../Header/Header';
 
+import Table from '../Table/Table'
 const Page = styled.div`
     // width: 100%;
     display: grid;
@@ -78,6 +79,7 @@ const Main = () => {
             <Header received={500} sold={430} available={70} />
             <ISCVisualizer />
             <WCCVisualizer />
+            <Table/>
           </div>
 
           {/* <div className="charts__right">
