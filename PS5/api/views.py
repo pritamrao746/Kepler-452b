@@ -9,8 +9,7 @@ from datetime import date,timedelta
 import statsmodels.api as sm
 from .a import predict
 
-# PATH="~/Desktop/College/SEM6/Hack/retailer_stock.csv"
-# df=pd.read_csv(PATH)
+
 # Create your views here.
 # @api_view(['GET', 'POST'])
 # def detail(request):
@@ -20,6 +19,9 @@ from .a import predict
 # 			a[key]=val
 # 		return Response(a)
 
+
+# PATH="~/Desktop/College/SEM6/Hack/retailer_stock.csv"
+# df=pd.read_csv(PATH)
 @api_view(['GET', 'POST'])
 def retailerlist(request):
 	if request.method=='GET':
@@ -27,6 +29,17 @@ def retailerlist(request):
 		a=dict()
 		a['reailer_list']=l
 		return Response(a)
+
+
+
+@api_view(['GET', 'POST'])
+def productlist(request):
+	if request.method=='GET':
+		l=['Imported DAP','MOP']
+		a=dict()
+		a['product_list']=l
+		return Response(a)
+
 
 @api_view(['GET', 'POST'])
 def processReatiler(request):
@@ -39,6 +52,10 @@ def processReatiler(request):
 			start_time=request.GET['start_time']
 			end_time=request.GET['end_time']
 			retailer_id=request.GET['retailer_id']
+			prodcut_id=request.GET['prodcut_id']
+			retailer_type=request.GET['type']
+			# res=predict(prodcut_id,prodcut_id,start_time,end_time,retailer_type)
+			# return Response(res)
 			# print(start_time+' '+end_time+' '+retailer_id)		
 			# return Response(status=status.HTTP_302_FOUND)
 			# return Response(predict(295565,'MOP',date(2021,1,2),date(2021,2,5),'secondary'))

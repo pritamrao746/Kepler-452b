@@ -11,7 +11,7 @@ def predict(retailer_id,product,start_date,end_date,sale_type):
     else:
         df = pd.read_csv("/Users/pravinrajpurohit/Desktop/Kepler-452b/PS5/api/sold_quantity_df.csv")
         quantity = "sold_quantity"
-    
+        
     #print(df)
     df["to_date"] = pd.to_datetime(df.to_date)
     df.index = df.to_date
